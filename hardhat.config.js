@@ -20,9 +20,15 @@ module.exports = {
         },
         goerli: {
             url: GOERLI_RPC_URL,
-            accounts: [PRIVATE_KEY],
+            accounts: PRIVATE_KEY !== undefined ? [PRIVATE_KEY] : [],
             chainId: 5,
             blockConfirmations: 6,
+        },
+    },
+    etherscan: {
+        // yarn hardhat verify --network <NETWORK> <CONTRACT_ADDRESS> <CONSTRUCTOR_PARAMETERS>
+        apiKey: {
+            goerli: ETHERSCAN_API_KEY,
         },
     },
     gasReporter: {

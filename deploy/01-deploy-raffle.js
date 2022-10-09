@@ -47,6 +47,8 @@ module.exports = async function ({ getNamedAccounts, deployments }) {
         await verify(raffle.address, args)
     }
     log("----------------------------------------------------")
+    log(gasLane, entranceFee, callbackGasLimit, interval)
+    log("----------------------------------------------------")
 }
 
 module.exports.tags = ["all", "raffle"]
